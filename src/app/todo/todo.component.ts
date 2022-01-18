@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Todo } from '../todo';
-import { MatDialog } from '@angular/material/dialog';
-import { EditComponent } from '../edit/edit.component';
 
 @Component({
   selector: 'app-todo',
@@ -12,8 +10,6 @@ export class TodoComponent implements OnInit {
 
   todos : Todo[] = [];
   newTodo: string;
-  
-  dialog: MatDialog;
 
   constructor() { }
 

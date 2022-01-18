@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Todo } from '../todo';
+import { MatDialog } from '@angular/material/dialog';
+import { EditComponent } from '../edit/edit.component';
 
 @Component({
   selector: 'app-todo',
@@ -10,6 +12,8 @@ export class TodoComponent implements OnInit {
 
   todos : Todo[] = [];
   newTodo: string;
+  
+  dialog: MatDialog;
 
   constructor() { }
 
@@ -28,12 +32,17 @@ export class TodoComponent implements OnInit {
     }
   }
 
-  completeTodo(id:number) {
+  completeTodo(id: number) {
     this.todos[id].isCompleted = !this.todos[id].isCompleted;
   }
 
-  deleteTodo(id:number) {
+  deleteTodo(id: number) {
     this.todos.splice(id, 1);
   }
 
+  editTodo(todo: Todo) {
+    const index = this.todos.indexOf(todo);
+    this.newTodo = todo.name;
+    this.todos.splice(index, 1);
+  }
 }

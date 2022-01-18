@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Todo } from './todo';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'toutoulist';
+  todos : Todo[] = [];
+  newTodo: string;
+
+  addTodo() {
+    if(this.newTodo) {
+      let todo = new Todo();
+      todo.name = this.newTodo;
+      todo.isCompleted = true;
+      this.todos.push(todo);
+      this.newTodo = "";
+    } else {
+      alert("Saisissez une tâche..");
+    }
+  }
 }

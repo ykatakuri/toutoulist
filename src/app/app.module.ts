@@ -6,11 +6,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TodoComponent } from './todo/todo.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HtmltopdfComponent } from './htmltopdf/htmltopdf.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TodoComponent,
+    HtmltopdfComponent
   ],
   imports: [
     BrowserModule,

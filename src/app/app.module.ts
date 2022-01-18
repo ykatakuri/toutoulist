@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { TodoComponent } from './todo/todo.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HtmltopdfComponent } from './htmltopdf/htmltopdf.component';
+import { TodoItemComponent } from './todo-item/todo-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TodoComponent,
-    HtmltopdfComponent
+    HtmltopdfComponent,
+    TodoItemComponent
   ],
   imports: [
     BrowserModule,

@@ -18,9 +18,11 @@ export class HtmltopdfComponent implements OnInit {
   }
 
   captureScreen(): void {
-    console.log(this.todos);
-    let data = document.getElementById('contentToExport');
-    html2canvas(data as any).then(canvas => {
+    try {
+      console.log(this.todos);
+      let data = document.getElementById('contentToExport');
+
+      html2canvas(data as any).then(canvas => {
         var imgWidth = 210;
         var pageHeight = 295;
         var imgHeight = canvas.height * imgWidth / canvas.width;
@@ -30,6 +32,10 @@ export class HtmltopdfComponent implements OnInit {
         var position = 0;
         pdfData.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight)
         pdfData.save('toutoulist.pdf');
-    });
+      });
+    } catch (error) {
+      console.warn("Warning: disable this button if data doesn't exists!");
+    }
+    
   }
 }

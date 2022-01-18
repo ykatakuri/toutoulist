@@ -28,17 +28,18 @@ export class TodoComponent implements OnInit {
     }
   }
 
-  completeTodo(id: number) {
-    this.todos[id].isCompleted = !this.todos[id].isCompleted;
+  completeTodo(todo: Todo): void {
+    todo.isCompleted = !todo.isCompleted;
   }
 
-  deleteTodo(id: number) {
-    this.todos.splice(id, 1);
-  }
-
-  editTodo(todo: Todo) {
+  updateTodo(todo: Todo) {
     const index = this.todos.indexOf(todo);
     this.newTodo = todo.name;
+    this.todos.splice(index, 1);
+  }
+
+  deleteTodo(todo: Todo) {
+    const index = this.todos.indexOf(todo);
     this.todos.splice(index, 1);
   }
 }

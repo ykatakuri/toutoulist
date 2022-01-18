@@ -26,4 +26,8 @@ export class AppComponent {
   completeTodo(id:number) {
     this.todos[id].isCompleted = !this.todos[id].isCompleted;
   }
+
+  deleteTodo(id:number) {
+    this.todos.splice(id, 1);
+  }
 }

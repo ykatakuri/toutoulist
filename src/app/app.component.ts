@@ -22,4 +22,8 @@ export class AppComponent {
       alert("Saisissez une tâche..");
     }
   }
+
+  completeTodo(id:number) {
+    this.todos[id].isCompleted = !this.todos[id].isCompleted;
+  }
 }

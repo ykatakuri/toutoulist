@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { jsPDF } from 'jspdf';
 import html2canvas from 'html2canvas';
-import { Todo } from '../todo';
+import { Todo } from '../../models/todo';
 
 @Component({
   selector: 'app-htmltopdf',

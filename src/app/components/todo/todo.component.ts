@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Todo } from '../../models/todo';
+import { Component, Input, OnInit, Output } from '@angular/core';
+import { TodosService } from 'src/app/services/todos.service';
+import { Todos } from '../../models/todos';
 
 @Component({
   selector: 'app-todo',
@@ -8,38 +9,22 @@ import { Todo } from '../../models/todo';
 })
 export class TodoComponent implements OnInit {
 
-  todos : Todo[] = [];
-  newTodo: string;
+  @Input() todo!: Todos;
+  @Input() index: number;
 
-  constructor() { }
+  constructor(private todosService: TodosService) { }
 
   ngOnInit(): void {
   }
 
-  addTodo() {
-    if(this.newTodo) {
-      let todo = new Todo();
-      todo.name = this.newTodo;
-      todo.isCompleted = true;
-      this.todos.push(todo);
-      this.newTodo = "";
-    } else {
-      alert("Saisissez une tâche..");
-    }
+  onComplete(): void {
+    this.todosService.completeTodoById(this.todo.id);
   }
 
-  completeTodo(todo: Todo): void {
-    todo.isCompleted = !todo.isCompleted;
+  onEdit(): void {
   }
 
-  updateTodo(todo: Todo) {
-    const index = this.todos.indexOf(todo);
-    this.newTodo = todo.name;
-    this.todos.splice(index, 1);
-  }
-
-  deleteTodo(todo: Todo) {
-    const index = this.todos.indexOf(todo);
-    this.todos.splice(index, 1);
+  onDelete(): void {
+    this.todosService.deleteTodoById(this.todo.id);
   }
 }

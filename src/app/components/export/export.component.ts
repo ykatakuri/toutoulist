@@ -1,16 +1,16 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { jsPDF } from 'jspdf';
 import html2canvas from 'html2canvas';
-import { Todo } from '../../models/todo';
+import { Todos } from '../../models/todos';
 
 @Component({
-  selector: 'app-htmltopdf',
-  templateUrl: './htmltopdf.component.html',
-  styleUrls: ['./htmltopdf.component.scss']
+  selector: 'app-export',
+  templateUrl: './export.component.html',
+  styleUrls: ['./export.component.scss']
 })
-export class HtmltopdfComponent implements OnInit {
+export class ExportComponent implements OnInit {
 
-  @Input() todos : Todo[] = [];
+  @Input() todos : Todos[] = [];
 
   constructor() { }
 

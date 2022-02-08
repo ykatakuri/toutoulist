@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HtmltopdfComponent } from './htmltopdf.component';
+import { AddTodoComponent } from './add-todo.component';
 
-describe('HtmltopdfComponent', () => {
-  let component: HtmltopdfComponent;
-  let fixture: ComponentFixture<HtmltopdfComponent>;
+describe('AddTodoComponent', () => {
+  let component: AddTodoComponent;
+  let fixture: ComponentFixture<AddTodoComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HtmltopdfComponent ]
+      declarations: [ AddTodoComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HtmltopdfComponent);
+    fixture = TestBed.createComponent(AddTodoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

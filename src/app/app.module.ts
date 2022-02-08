@@ -6,16 +6,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TodoComponent } from './components/todo/todo.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HtmltopdfComponent } from './components/htmltopdf/htmltopdf.component';
-import { TodoItemComponent } from './components/todo-item/todo-item.component';
+import { ExportComponent } from './components/export/export.component';
+import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { TodosService } from './services/todos.service';
+import { HeaderComponent } from './components/header/header.component';
+import { AddTodoComponent } from './components/add-todo/add-todo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TodoComponent,
-    HtmltopdfComponent,
-    TodoItemComponent
+    ExportComponent,
+    TodoListComponent,
+    HeaderComponent,
+    AddTodoComponent
   ],
   imports: [
     BrowserModule,
